@@ -1,7 +1,7 @@
 import React from "react";
-import Home from "./pages/Home";
-import Location from "./pages/Location";
-import NotFound from "./pages/NotFound";
+import Home from "./pages/home.component";
+import Location from "./pages/location.component";
+import NotFound from "./pages/notfound.component";
 import NavBar from "./components/navigation.component";
 import Footer from "./components/footer.component";
 import { Route, Routes } from "react-router";
