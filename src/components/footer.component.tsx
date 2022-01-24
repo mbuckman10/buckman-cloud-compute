@@ -30,7 +30,7 @@ export default class Footer extends React.Component<any> {
         <Navbar bg="light" expand="lg" className="px-5">
           <Row style={footerRow}>
             <Col sm="6">
-              <p style={footerText}>Michael Buckman &copy;2022</p>
+              <p style={footerText}>&copy; 2022 Michael Buckman</p>
             </Col>
           </Row>
         </Navbar>
