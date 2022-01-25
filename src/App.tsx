@@ -6,7 +6,6 @@ import NavBar from "./components/navigation.component";
 import Footer from "./components/footer.component";
 import { Route, Routes } from "react-router";
 import { StaticRouter } from "react-router-dom/server";
-import ILocation from "./types/location";
 
 export default class App extends React.Component<any, any> {
   constructor(props: any) {

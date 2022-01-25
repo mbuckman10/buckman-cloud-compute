@@ -13,7 +13,10 @@ class Server {
    * (This will only happen once)
    */
   registerListener() {
-    addEventListener("fetch", async (event: any) => {
+    addEventListener("fetch", async (event: FetchEvent) => {
+      //fastly.enableDebugLogging(true);
+      this.logEnvVeriables();
+
       // Parse URL for routing
       const url = new URL(event.request.url);
 
@@ -36,7 +39,7 @@ class Server {
           data={{
             url: url.pathname,
             clientIp: event.client.address,
-            geo: event.client.address,
+            geo: event.client.geo,
           }}
         />
       );
@@ -81,6 +84,17 @@ class Server {
     resp.headers.set("cache-control", "no-cache"); // For testing
 
     return resp;
+  }
+
+  logEnvVeriables() {
+    console.log(`The Customer Id is ${fastly.env.get("FASTLY_CUSTOMER_ID")}`);
+    console.log(`The Service Id is ${fastly.env.get("FASTLY_SERVICE_ID")}`);
+    console.log(`The cachegen is ${fastly.env.get("FASTLY_CACHE_GENERATION")}`);
+    console.log(`The pop hit is ${fastly.env.get("FASTLY_POP")}`);
+    console.log(`The hostname is ${fastly.env.get("FASTLY_HOSTNAME")}`);
+    console.log(`The region is ${fastly.env.get("FASTLY_REGION")}`);
+    console.log(`The version is ${fastly.env.get("FASTLY_SERVICE_VERSION")}`);
+    console.log(`The trace Id is ${fastly.env.get("FASTLY_TRACE_ID")}`);
   }
 }
 

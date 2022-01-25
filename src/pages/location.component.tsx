@@ -1,5 +1,4 @@
 import React from "react";
-import ILocation from "../types/location";
 
 type Props = {
   data: ILocation;
@@ -10,14 +9,6 @@ type State = {
 };
 
 export default class Location extends React.Component<Props, State> {
-  public static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-    return nextProps.data.geo !== prevState.data.geo
-      ? {
-          data: nextProps.data,
-        }
-      : null;
-  }
-
   constructor(props: Props) {
     super(props);
     this.state = {

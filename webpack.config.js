@@ -20,6 +20,7 @@ module.exports = {
       util: require.resolve("util/"),
       buffer: require.resolve("buffer/"),
       url: require.resolve("core-js/"),
+      os: require.resolve("os-browserify/browser")
     },
   },
   module: {
