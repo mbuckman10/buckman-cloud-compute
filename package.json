@@ -5,7 +5,6 @@
   "main": "src/index.js",
   "keywords": [],
   "author": "mbuckman@fastly.com",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fastly/compute-starter-kit-js-proto/issues"
   },

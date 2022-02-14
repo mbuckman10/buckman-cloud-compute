@@ -5,28 +5,30 @@ import App from "./App";
 
 class Server {
   constructor() {
-    this.registerListener();
+    addEventListener("fetch", (event) =>
+      event.respondWith(this.handleRequest(event))
+    );
   }
 
-  /**
-   * Listen for incoming http requests
-   * (This will only happen once)
-   */
-  registerListener() {
-    addEventListener("fetch", async (event: FetchEvent) => {
-      //fastly.enableDebugLogging(true);
-      this.logEnvVeriables();
+  async handleRequest(event: any) {
+    fastly.enableDebugLogging(false);
 
-      // Parse URL for routing
-      const url = new URL(event.request.url);
+    // Log to a Fastly endpoint.
+    const logger = fastly.getLogger("AzureLogging");
+    logger.log("Hello from the edge!");
+    logger.log("We have Azure Blob Logs!");
 
-      const body = this.renderFullPage(this.renderReact(url, event));
+    // Log to a Fastly endpoint.
+    const httpslogger = fastly.getLogger("AzureFunction");
+    httpslogger.log("Hello from the edge!");
+    httpslogger.log("We have HTTPS Logs!");
 
-      const resp = this.makeResponse(body);
+    this.logEnvVeriables();
 
-      // Return
-      event.respondWith(resp);
-    });
+    // Parse URL for routing
+    const url = new URL(event.request.url);
+    const body = this.renderFullPage(this.renderReact(url, event));
+    return this.makeResponse(body);
   }
 
   /**
