@@ -11,7 +11,7 @@ class Server {
   }
 
   async handleRequest(event: any) {
-    fastly.enableDebugLogging(false);
+    //fastly.enableDebugLogging(false);
 
     // Log to a Fastly endpoint.
     const logger = fastly.getLogger("AzureLogging");
@@ -41,7 +41,7 @@ class Server {
           data={{
             url: url.pathname,
             clientIp: event.client.address,
-            geo: event.client.geo,
+            //geo: event.client.geo,
           }}
         />
       );

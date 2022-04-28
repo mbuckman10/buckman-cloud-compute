@@ -12,5 +12,5 @@ declare var self: any;
 declare interface ILocation {
   url: string;
   clientIp: string;
-  geo: Geolocation;
+  geo?: Geolocation;
 }

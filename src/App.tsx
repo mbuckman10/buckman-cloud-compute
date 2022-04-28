@@ -13,7 +13,7 @@ export default class App extends React.Component<any, any> {
     this.state = {
       url: props.data.url,
       clientIp: props.data.clientIp,
-      geo: props.data.geo,
+      //geo: props.data.geo,
     };
   }
 
@@ -21,7 +21,7 @@ export default class App extends React.Component<any, any> {
     const data: ILocation = {
       clientIp: this.state.clientIp,
       url: this.state.url,
-      geo: this.state.geo,
+      //geo: this.state.geo,
     };
     return (
       <div>

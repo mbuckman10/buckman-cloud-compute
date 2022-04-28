@@ -34,7 +34,7 @@
     "deploy": "fastly compute deploy"
   },
   "dependencies": {
-    "@fastly/js-compute": "^0.2.1",
+    "@fastly/js-compute": "^0.2.4",
     "core-js": "^3.11.0",
     "faker": "^5.5.3",
     "react": "^17.0.2",
