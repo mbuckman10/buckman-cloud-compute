@@ -1,19 +1,8 @@
 import React, { CSSProperties } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-
 import logo from "../assets/logo.svg";
-
-const logoImage: CSSProperties = {
-  height: "75px",
-  width: "125px",
-};
-
-const navLink: CSSProperties = {
-  fontWeight: "800",
-  paddingLeft: "20px",
-  paddingRight: "20px",
-};
+import { buckmanNavFill, logoImage, navLink } from "../styles/general";
 
 export default class Navigation extends React.Component<any> {
   constructor(props: any) {
@@ -21,16 +10,16 @@ export default class Navigation extends React.Component<any> {
     this.state = {};
   }
 
-  render(): React.ReactElement {
+  render() {
     return (
-      <Navbar bg="dark" variant="dark">
+      <Navbar style={buckmanNavFill}>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
-              <div
+              {/* <div
                 style={logoImage}
                 dangerouslySetInnerHTML={{ __html: logo }}
-              ></div>
+              ></div> */}
             </Navbar.Brand>
           </LinkContainer>
           <Nav className="me-auto">

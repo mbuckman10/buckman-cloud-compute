@@ -13,7 +13,7 @@ export default class Home extends React.Component<any> {
           <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
             <h1 className="display-4 fw-bold lh-1">React @ the Edge!</h1>
             <p className="lead">
-              React running in JS on Fastly's C@E Platform!
+              TypeScript and React running on Fastly's C@E Platform!
             </p>
           </div>
         </div>

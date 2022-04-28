@@ -24,7 +24,7 @@ export default class Footer extends React.Component<any> {
     this.state = {};
   }
 
-  render(): React.ReactElement {
+  render() {
     return (
       <footer style={footerContainer}>
         <Navbar bg="light" expand="lg" className="px-5">

@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./pages/home.component";
 import Location from "./pages/location.component";
 import NotFound from "./pages/notfound.component";
-import NavBar from "./components/navigation.component";
+import Navigation from "./components/navigation.component";
 import Footer from "./components/footer.component";
 import { Route, Routes } from "react-router";
 import { StaticRouter } from "react-router-dom/server";
@@ -26,7 +26,7 @@ export default class App extends React.Component<any, any> {
     return (
       <div>
         <StaticRouter location={this.state.url}>
-          <NavBar />
+          <Navigation />
           <br />
 
           <div className="container">
