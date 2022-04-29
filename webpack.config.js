@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   stats: { errorDetails: true },
@@ -20,7 +21,7 @@ module.exports = {
       util: require.resolve("util/"),
       buffer: require.resolve("buffer/"),
       url: require.resolve("core-js/"),
-      os: require.resolve("os-browserify/browser")
+      os: require.resolve("os-browserify/browser"),
     },
   },
   module: {
@@ -33,7 +34,7 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: "svg-inline-loader",
-      }
+      },
     ],
   },
 };
